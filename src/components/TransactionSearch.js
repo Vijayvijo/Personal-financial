@@ -74,7 +74,7 @@ const TransactionSearch = ({
     const searchMatch = searchTerm
       ? transaction.name.toLowerCase().includes(searchTerm.toLowerCase())
       : true;
-    // const tagMatch = selectedTag ? transaction.tag === selectedTag : true;
+    const tagMatch = selectedTag ? transaction.tag === selectedTag : true;
     const typeMatch = typeFilter ? transaction.type === typeFilter : true;
 
     return searchMatch && tagMatch && typeMatch;
