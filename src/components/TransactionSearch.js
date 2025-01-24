@@ -1,11 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Input, Table, Select, Radio } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
 import search from "../assets/search.svg";
 import { parse } from "papaparse";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-const { Search } = Input;
 const { Option } = Select;
 
 const TransactionSearch = ({
@@ -15,10 +12,9 @@ const TransactionSearch = ({
   fetchTransactions,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTag, setSelectedTag] = useState("");
+  // const [selectedTag, setSelectedTag] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
   const [sortKey, setSortKey] = useState("");
-  const fileInput = useRef();
 
   function importFromCsv(event) {
     event.preventDefault();
@@ -78,7 +74,7 @@ const TransactionSearch = ({
     const searchMatch = searchTerm
       ? transaction.name.toLowerCase().includes(searchTerm.toLowerCase())
       : true;
-    const tagMatch = selectedTag ? transaction.tag === selectedTag : true;
+    // const tagMatch = selectedTag ? transaction.tag === selectedTag : true;
     const typeMatch = typeFilter ? transaction.type === typeFilter : true;
 
     return searchMatch && tagMatch && typeMatch;
@@ -119,8 +115,8 @@ const TransactionSearch = ({
           <img src={search} width="16" />
           <input
             placeholder="Search by Name"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+            onChange={(e) => setSearchTerm(e.target.value)}/>
+        
         </div>
         <Select
           className="select-input"

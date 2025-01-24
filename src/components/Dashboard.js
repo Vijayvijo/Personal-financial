@@ -110,7 +110,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchTransactions();
-  }, [fetchTransactions]);
+  });
 
   const onFinish = (values, type) => {
     const newTransaction = {
@@ -148,7 +148,7 @@ const Dashboard = () => {
   // Calculate the initial balance, income, and expenses
   useEffect(() => {
     calculateBalance();
-  }, [transactions,calculateBalance]);
+  });
 
   async function addTransaction(transaction, many) {
     try {
