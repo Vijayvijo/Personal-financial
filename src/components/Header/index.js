@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./styles.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
 import userSvg from "../../assets/user.svg";
