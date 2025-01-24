@@ -12,7 +12,7 @@ const TransactionSearch = ({
   fetchTransactions,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTag, setSelectedTag] = useState("");
+  // const [selectedTag, setSelectedTag] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
   const [sortKey, setSortKey] = useState("");
 
@@ -74,10 +74,11 @@ const TransactionSearch = ({
     const searchMatch = searchTerm
       ? transaction.name.toLowerCase().includes(searchTerm.toLowerCase())
       : true;
-    const tagMatch = selectedTag ? transaction.tag === selectedTag : true;
+    // const tagMatch = selectedTag ? transaction.tag === selectedTag : true;
     const typeMatch = typeFilter ? transaction.type === typeFilter : true;
 
-    return searchMatch && tagMatch && typeMatch;
+    // return searchMatch && tagMatch && typeMatch;
+    return searchMatch && typeMatch;
   });
 
   const sortedTransactions = [...filteredTransactions].sort((a, b) => {

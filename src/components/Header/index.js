@@ -30,6 +30,7 @@ function Header() {
               src={user.photoURL ? user.photoURL : userSvg}
               width={user.photoURL ? "32" : "24"}
               style={{ borderRadius: "50%" }}
+              alt="logo"
             />
           </span>
           Logout
