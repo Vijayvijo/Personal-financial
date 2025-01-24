@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { Input, Table, Select, Radio } from "antd";
+import React, {  useState } from "react";
+import {  Table, Select, Radio } from "antd";
 import search from "../assets/search.svg";
 import { parse } from "papaparse";
 import { toast } from "react-toastify";
@@ -74,7 +74,7 @@ const TransactionSearch = ({
     const searchMatch = searchTerm
       ? transaction.name.toLowerCase().includes(searchTerm.toLowerCase())
       : true;
-    const tagMatch = selectedTag ? transaction.tag === selectedTag : true;
+    // const tagMatch = selectedTag ? transaction.tag === selectedTag : true;
     const typeMatch = typeFilter ? transaction.type === typeFilter : true;
 
     return searchMatch && tagMatch && typeMatch;
